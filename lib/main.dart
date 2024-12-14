@@ -25,14 +25,13 @@ class JokesApp extends StatelessWidget {
         ),
         useMaterial3: true,
         textTheme: ThemeData.light().textTheme.copyWith(
-          bodyMedium: const TextStyle(fontSize: 14, color: Colors.white),
-          bodySmall: const TextStyle(fontSize: 12, color: Colors.white70),
-          titleMedium: const TextStyle(
-              fontSize: 16,
-              color: Colors.white,
-              fontWeight: FontWeight.bold
-          ),
-        ),
+              bodyMedium: const TextStyle(fontSize: 14, color: Colors.white),
+              bodySmall: const TextStyle(fontSize: 12, color: Colors.white70),
+              titleMedium: const TextStyle(
+                  fontSize: 16,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold),
+            ),
         cardTheme: CardTheme(
           elevation: 6,
           shape: RoundedRectangleBorder(
@@ -187,7 +186,8 @@ class _JokesHomePageState extends State<JokesHomePage>
             SliverToBoxAdapter(
               child: Container(
                 margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                 decoration: BoxDecoration(
                   color: Colors.white.withOpacity(0.2),
                   borderRadius: BorderRadius.circular(24),
@@ -223,56 +223,53 @@ class _JokesHomePageState extends State<JokesHomePage>
                                 Text(
                                   category.toUpperCase(),
                                   style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 14
-                                  ),
+                                      color: Colors.white, fontSize: 14),
                                 ),
                               ],
                             ),
                           ),
                         ),
-                        const SizedBox(width: 16),
-                        Expanded(
-                          child: _buildGlassDropdown<int>(
-                            value: _selectedCount,
-                            hint: 'Count',
-                            items: _countOptions,
-                            onChanged: (newValue) {
-                              if (newValue != null) {
-                                setState(() {
-                                  _selectedCount = newValue;
-                                });
-                              }
-                            },
-                            itemBuilder: (count) => Text(
-                              '$count jokes',
-                              style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14
-                              ),
-                            ),
-                          ),
-                        ),
+                        // const SizedBox(width: 16),
+                        // Expanded(
+                        //   child: _buildGlassDropdown<int>(
+                        //     value: _selectedCount,
+                        //     hint: 'Count',
+                        //     items: _countOptions,
+                        //     onChanged: (newValue) {
+                        //       if (newValue != null) {
+                        //         setState(() {
+                        //           _selectedCount = newValue;
+                        //         });
+                        //       }
+                        //     },
+                        //     itemBuilder: (count) => Text(
+                        //       '$count jokes',
+                        //       style: const TextStyle(
+                        //           color: Colors.white, fontSize: 14),
+                        //     ),
+                        //   ),
+                        // ),
                       ],
                     ),
                     const SizedBox(height: 16),
                     ElevatedButton.icon(
                       onPressed: _fetchJokes,
-                      icon: const Icon(Icons.refresh_rounded, color: Colors.white),
+                      icon: const Icon(Icons.refresh_rounded,
+                          color: Colors.white),
                       label: const Text(
                         'Load Jokes',
                         style: TextStyle(
                             fontSize: 16,
                             color: Colors.white,
-                            fontWeight: FontWeight.bold
-                        ),
+                            fontWeight: FontWeight.bold),
                       ),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white.withOpacity(0.3),
                         minimumSize: const Size(double.infinity, 50),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(16),
-                          side: BorderSide(color: Colors.white.withOpacity(0.5)),
+                          side:
+                              BorderSide(color: Colors.white.withOpacity(0.5)),
                         ),
                       ),
                     ),
@@ -397,7 +394,7 @@ class _JokesHomePageState extends State<JokesHomePage>
 
     return SliverList(
       delegate: SliverChildBuilderDelegate(
-            (context, index) {
+        (context, index) {
           return SlideTransition(
             position: Tween<Offset>(
               begin: const Offset(1, 0),
